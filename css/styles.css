@@ -1,0 +1,506 @@
+body {
+  margin: 0;
+  background-color: #fffefe;
+  /* color: #fff; */
+  font-family: "Segoe UI", sans-serif;
+}
+
+.blur-bg {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(14, 13, 13, 0.6); /* sáng mờ nhẹ */
+}
+
+.nav-link {
+  color: rgb(255, 255, 255);
+  font-family: "Sofia", sans-serif;
+}
+.section-title-main {
+  font-family: "Sofia", sans-serif;
+  font-size: 64px;
+}
+.lead {
+  font-family: "Sofia", sans-serif;
+  font-size: 50px;
+  color: rgba(248, 248, 248, 1);
+}
+#instructors {
+  background-image: url("/img/banner_down.jpg");
+  background-size: contain;
+}
+.img-slide {
+  height: 400px;
+}
+.lead {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.tab-section {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #222;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+}
+
+/* Tabs */
+.nav-tabs .nav-link {
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 0;
+  margin-right: 5px;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: orange;
+  color: #111;
+  font-weight: bold;
+}
+
+.tab-content {
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-radius: 0 0 10px 10px;
+  border-top: none;
+}
+
+.tab-pane h3 {
+  color: orange;
+  margin-bottom: 15px;
+}
+
+.tab-pane p {
+  color: #ddd;
+}
+
+/* Footer info style (optional reuse from previous design) */
+.contact span {
+  display: inline-block;
+  margin: 8px 10px 0 0;
+  background-color: orange;
+  color: #111;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* menu */
+
+.menu-container {
+  max-width: 1200px; /* Tăng chiều rộng */
+  width: 95%; /* Chiếm gần hết chiều ngang */
+  margin: 40px auto;
+  padding: 30px;
+  background: #222;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Nhấn nổi bật */
+}
+.header-2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.menu-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.menu-block {
+  flex: 1 1 55%;
+}
+
+.menu-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-block li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px dashed #444;
+}
+
+.section-title {
+  padding: 5px 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #111;
+}
+
+.section-title.main {
+  background-color: orange;
+}
+
+.section-title.appetizer {
+  background-color: orange;
+}
+
+.section-title.beverage {
+  background-color: orange;
+}
+
+.menu-image {
+  position: relative;
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-right::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 180px;
+  background-color: orange;
+  border-radius: 100% 50% 50% 100%;
+  z-index: 0;
+  right: 0;
+}
+
+.img-left::before {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 180px;
+  background-color: orange;
+  border-radius: 50% 100% 100% 50%;
+  z-index: 0;
+  left: 0;
+}
+
+.menu-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid orange;
+  z-index: 1;
+  position: relative;
+}
+
+footer {
+  background-color: #111;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+}
+
+.contact span {
+  display: inline-block;
+  margin: 0 10px;
+  background-color: orange;
+  color: #111;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; /* Hoặc orange, tùy bạn muốn màu gì */
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 1;
+}
+/* Icon trong phần số điện thoại */
+.list-group-item i.bi-facebook,
+.list-group-item i.bi-github {
+  font-size: 30px; /* hoặc to hơn nếu bạn muốn, ví dụ 36px */
+  color: #3b5998; /* Facebook màu xanh */
+  transition: transform 0.2s ease, color 0.3s ease;
+  vertical-align: middle;
+}
+
+.list-group-item i.bi-github {
+  color: #333; /* GitHub màu xám đậm */
+}
+
+/* Hiệu ứng khi rê chuột vào icon */
+.list-group-item a:hover i.bi-facebook {
+  color: #1d3f91;
+  transform: scale(1.2);
+}
+
+.list-group-item a:hover i.bi-github {
+  color: #000;
+  transform: scale(1.2);
+}
+/* Hiển thị rõ ràng phần thông tin liên hệ */
+.list-group-item {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: none;
+}
+
+.list-group-item i {
+  color: #000 !important;
+}
+
+#news h2.header-2 {
+  color: orange;
+}
+
+#news .card-title {
+  font-weight: bold;
+  color: #b30000;
+}
+
+#news .card-text del {
+  color: #888;
+}
+
+#news .card-text span.text-success {
+  font-size: 1.1rem;
+}
+/* Hiệu ứng hover cho các món ăn trong menu */
+.menu-block li:hover {
+  background-color: #333;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho các phần tử section-title */
+.section-title:hover {
+  background-color: #f1a300; /* Chuyển sang màu cam sáng hơn khi hover */
+  color: #111;
+}
+
+/* Thêm hiệu ứng hover cho các nút */
+button:hover {
+  background-color: #f1a300;
+  color: #fff;
+  transform: scale(1.05);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho các icon */
+.list-group-item a:hover {
+  text-decoration: none;
+  color: #ff6600; /* Màu khi rê chuột vào icon */
+}
+
+/* Hiệu ứng hover cho hình ảnh trong menu */
+.menu-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng chuyển động mượt mà cho các tab */
+.nav-tabs .nav-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hiệu ứng chuyển động cho phần nội dung của tab */
+.tab-content {
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho các mục trong menu */
+.menu-container:hover {
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Thêm hiệu ứng bóng mờ */
+}
+
+/* Thêm hiệu ứng cho hình ảnh trong phần menu */
+.menu-image img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cải tiến giao diện footer */
+footer {
+  background-color: #222;
+  color: #fff;
+  border-top: 1px solid #333;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* Hiệu ứng hover cho các icon trong footer */
+footer .contact span:hover {
+  background-color: #ff6600;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Hiệu ứng cho các phần tử liên hệ */
+.list-group-item {
+  background-color: #1a1a1a;
+  border: none;
+  color: #fff;
+}
+
+.list-group-item:hover {
+  background-color: #333;
+}
+
+/* Thêm hiệu ứng chuyển động cho carousel */
+.carousel-item {
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: orange;
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+.section-title:hover {
+  background-color: orange; /* Giữ nguyên màu ban đầu */
+  color: #111; /* Giữ màu chữ */
+}
+.menu-block li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px dashed #444;
+  gap: 10px;
+}
+
+.menu-block .item-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-block .item-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-block button {
+  background-color: orange;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-block button:hover {
+  background-color: #ff9900;
+}
+.menu-item {
+  background-color: #1a1a1a;
+  border: 1px dashed #444;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #2a2a2a;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-control button {
+  background-color: orange;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-control button:hover {
+  background-color: #ff9900;
+}
+
+.quantity-control .quantity {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  width: 30px;
+  text-align: center;
+}
+.total-container {
+  text-align: center;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.total-container #totalPrice {
+  font-size: 28px;
+  color: red;
+  margin: 5px 0 0;
+}
+/* TẮT HẲN NỀN CAM Ở VÙNG BÊN PHẢI KHI HOVER CAROUSEL */
+.carousel-control-prev,
+.carousel-control-next {
+  background: transparent !important;
+  transition: none !important;
+}
+
+/* Đảm bảo icon giữ nguyên nền và không đổi màu */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black !important; /* hoặc orange nếu bạn muốn */
+  border-radius: 50%;
+  background-size: 100% 100%;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  transition: none !important;
+}
+
+/* Khi rê chuột cũng giữ nguyên */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: transparent !important;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgb(0, 0, 0) !important;
+}
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-control-next::before,
+.carousel-control-prev::before,
+.carousel-control-next::after,
+.carousel-control-prev::after {
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
