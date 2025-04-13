@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tràm Chim Restaurant</title>
+    <!-- cdn bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!--  -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- cdn font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple"
+    />
+    <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <header>
+      <div id="carouselExample" class="carousel slide m-4" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./img/carau-1.jpg" class="d-block w-100 img-slide" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/carau-2.jpg" class="d-block w-100 img-slide" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/carau-3.jpg" class="d-block w-100 img-slide" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <nav class="fixed-top blur-bg">
+        <ul class="nav justify-content-end px-5">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#introduce">Giới thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#carouselExampleIndicators">Thực đơn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tin-tuc-su-kien">Tin tức - Sự kiện</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Liên hệ
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#dat-ban">
+                  Đặt bàn
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary w-100 my-1" data-bs-toggle="modal" data-bs-target="#modal-tuyen-dung">
+                  Tuyển dụng
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#datHangModal">
+                  Mua Về
+                </button>                                
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- Modal -->
+<div class="modal fade" id="dat-ban" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin đặt bàn</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3" id="bookingForm">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Họ tên</label>
+            <input type="text" class="form-control" id="name" placeholder="Nguyễn Văn A">
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Số điện thoại</label>
+            <input type="tel" class="form-control" id="phone" placeholder="09xxxxxxxx">
+          </div>
+          <div class="col-md-6">
+            <label for="date" class="form-label">Ngày đặt</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+          <div class="col-md-6">
+            <label for="time" class="form-label">Giờ đặt</label>
+            <input type="time" class="form-control" id="time">
+          </div>
+          <div class="col-md-6">
+            <label for="people" class="form-label">Số người</label>
+            <input type="number" class="form-control" id="people" min="1" value="2">
+          </div>
+          <div class="col-12">
+            <label for="note" class="form-label">Ghi chú</label>
+            <textarea class="form-control" id="note" rows="3" placeholder="Yêu cầu đặc biệt (nếu có)"></textarea>
+          </div>
+          <button type="submit" class="btn  btn-success mt-3">Xác Nhận Đặt Bàn</button>
+        </form>
+        <div id="resultMsg" class="text-center mt-3"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Hủy</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Tuyển Dụng -->
+<div class="modal fade" id="modal-tuyen-dung" tabindex="-1" aria-labelledby="modalTuyenDungLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title" id="modalTuyenDungLabel">Thông Tin Tuyển Dụng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3">
+          <div class="col-12">
+            <label for="position" class="form-label">Vị trí ứng tuyển</label>
+            <select class="form-select" id="position">
+              <option selected disabled>Chọn vị trí</option>
+              <option>Phục vụ bàn</option>
+              <option>Phụ bếp</option>
+              <option>Thu ngân</option>
+              <option>Bảo vệ</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="nameApply" class="form-label">Họ tên</label>
+            <input type="text" class="form-control" id="nameApply" placeholder="Nguyễn Văn B">
+          </div>
+          <div class="col-md-6">
+            <label for="phoneApply" class="form-label">Số điện thoại</label>
+            <input type="tel" class="form-control" id="phoneApply" placeholder="09xxxxxxxx">
+          </div>
+          <div class="col-12">
+            <label for="messageApply" class="form-label">Giới thiệu bản thân / Ghi chú</label>
+            <textarea class="form-control" id="messageApply" rows="3" placeholder="Kinh nghiệm, thời gian rảnh, v.v..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Gửi thông tin ứng tuyển</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <small class="text-muted">Chúng tôi sẽ liên hệ lại qua số điện thoại của bạn.</small>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="datHangModal" tabindex="-1" aria-labelledby="datHangLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="datHangLabel">Thông Tin Mua Về</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Đóng"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+<!-- DANH SÁCH MÓN ĂN -->
+<div class="mb-4">
+  <label class="form-label fw-bold fs-5">Chọn món ăn:</label>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Gà hấp mắm nhĩ - 290k</span>
+          <div class="quantity-control" data-price="290000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+  
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Gà tiềm ớt hiểm - 299k</span>
+          <div class="quantity-control" data-price="299000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Giò heo muối chiên giòn - 219k</span>
+          <div class="quantity-control" data-price="219000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Lẩu nấm Tràm Chim - 310k</span>
+          <div class="quantity-control" data-price="310000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sườn nướng Tràm Chim - 149k/cây</span>
+          <div class="quantity-control" data-price="149000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Đậu hũ Tràm Chim - 159k</span>
+          <div class="quantity-control" data-price="159000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Đậu hũ tứ xuyên - 159k</span>
+          <div class="quantity-control" data-price="159000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+  
+           <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Chả Giò Hải Sản - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Khoai môn chiên nước mắm - 89k</span>
+          <div class="quantity-control" data-price="89000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Khô cá kèo mắm me - 149k</span>
+          <div class="quantity-control" data-price="149000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Gà tiềm ớt hiểm - 299k</span>
+          <div class="quantity-control" data-price="299000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Rau củ kho quẹt - 49k</span>
+          <div class="quantity-control" data-price="49000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cơm Chiên Tràm Chim - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cơm Chiên Cá Mặn - 119k</span>
+          <div class="quantity-control" data-price="119000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cơm Chiên Hải Sản - 89k</span>
+          <div class="quantity-control" data-price="89000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cơm Chiên Thịt Cua - 119k</span>
+          <div class="quantity-control" data-price="119000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cơm vắt khô dứa - 159k</span>
+          <div class="quantity-control" data-price="159000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Bồ Câu Quay - 150k</span>
+          <div class="quantity-control" data-price="150000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Bồ Câu Nướng Muối Ớt - 150k</span>
+          <div class="quantity-control" data-price="150000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Bồ Câu Tiềm Thuốc Bắc - 239k</span>
+          <div class="quantity-control" data-price="239000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cháo Bồ Câu Hạt Sen - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Bồ Câu Rôti - 189k</span>
+          <div class="quantity-control" data-price="189000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Combo Gia Đình 1: Combo Gia Đình 1: Gà Hấp + Gỏi Ngó Sen + Lẩu Thái + Dê Nướng Ngũ Vị + Mì Xào Giòn + Cơm vắt khô dứa + Nui Xào Bò + Sườn Nướng Muối Ớt - 750k</span>
+          <div class="quantity-control" data-price="750000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Combo Gia Đình 2: Cá Lóc Nướng Trui + Rau Sống + Bún + Nước Chấm + Bồ Câu Quay + Dê Xào Sả Ớt + Mì Trứng Xào Singapore - 689k</span>
+          <div class="quantity-control" data-price="689000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Combo Gia Đình 3: Giò Heo Muối Chiên + Canh Gà Lá Giang + Cơm Trắng + Dê Xào Sả Ớt + Sườn Xào Chua Ngọt - 529k</span>
+          <div class="quantity-control" data-price="529000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Combo Gia Đình 4: Sườn Nướng + Lẩu Mắm Miền Tây + Tráng Miệng + Khai Vị - 649k</span>
+          <div class="quantity-control" data-price="649000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Combo Gia Đình 5: Vịt Quay + Gỏi Xoài + Cơm Chiên Hải Sản + Cháo Gà Lá Giang - 650K </span>
+          <div class="quantity-control" data-price="650000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Combo Gia Đình 6: Lẩu Cá Lăng + Sườn Nướng + Gà Ta Quay Tràm Chim - 450k</span>
+          <div class="quantity-control" data-price="450000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sườn Nướng Mật Ong - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sườn Nướng Mật Ong - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sườn Nướng Muối Ớt - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sườn Sốt Rựu Vang - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sườn Xào Chua Ngọt - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+    </div>
+  
+    <div class="col-md-6">
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Súp Tràm Chim Đặc Biệt - 49k</span>
+          <div class="quantity-control" data-price="49000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Súp Hải Sản / Gà Xé / Tôm - 39k</span>
+          <div class="quantity-control" data-price="39000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Súp Thố - 199k</span>
+          <div class="quantity-control" data-price="199000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Súp Cua Trứng Gà - 89k</span>
+          <div class="quantity-control" data-price="89000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Rau Cải Xào Thập Cẩm - 99k</span>
+          <div class="quantity-control" data-price="99000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Bông Thiên Lý Xào Bò - 139k</span>
+          <div class="quantity-control" data-price="139000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Rau Muống Xào Tỏi - 79k</span>
+          <div class="quantity-control" data-price="79000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cà Tím Nướng Mỡ Hành - 89k</span>
+          <div class="quantity-control" data-price="89000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Bầu Luộc - 79k</span>
+          <div class="quantity-control" data-price="79000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Bún Gạo Xào Hải Sản - 119k</span>
+          <div class="quantity-control" data-price="119000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Miến Xào Hải Sản - 119k</span>
+          <div class="quantity-control" data-price="119000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Mì Trứng Xào Singapore - 119k</span>
+          <div class="quantity-control" data-price="119000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Nui Xào Bò - 119k</span>
+          <div class="quantity-control" data-price="119000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Mì Xào Giòn - 119k</span>
+          <div class="quantity-control" data-price="119000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cháo Bò Bằm - 150k</span>
+          <div class="quantity-control" data-price="150000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cháo Hải Sản - 169k</span>
+          <div class="quantity-control" data-price="169000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cháo Ếch Singapore - 209k</span>
+          <div class="quantity-control" data-price="209000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cháo Thịt Bằm Trứng Bắc Thảo - 200k</span>
+          <div class="quantity-control" data-price="200000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Dê Nướng Ngũ Vị - 179k</span>
+          <div class="quantity-control" data-price="179000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Dê Xào Sả Ớt - 179k</span>
+          <div class="quantity-control" data-price="179000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Dê Né - 219k</span>
+          <div class="quantity-control" data-price="219000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Lẩu Dê Tràm Chim - 300k</span>
+          <div class="quantity-control" data-price="300000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Gà Tre Rang Lá Chanh - 259k</span>
+          <div class="quantity-control" data-price="259000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Gà Tre Nướng Muối Ớt - 289k</span>
+          <div class="quantity-control" data-price="289000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Gà Ta Quay Tràm Chim - 300k</span>
+          <div class="quantity-control" data-price="300000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Lẩu Gà Lá Giang - 350k</span>
+          <div class="quantity-control" data-price="350000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sò Dương Hấp Chàm Chim - 100k</span>
+          <div class="quantity-control" data-price="100000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sò Dương Nướng Muối Ớt - 60k</span>
+          <div class="quantity-control" data-price="60000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sò Dương Nướng Mỡ Hành - 60k</span>
+          <div class="quantity-control" data-price="60000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sò Lông Nướng Mọi - 60k</span>
+          <div class="quantity-control" data-price="60000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sò Lông Hấp Xã - 70k</span>
+          <div class="quantity-control" data-price="70000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cà Tím Nướng Mỡ Hành - 89k</span>
+          <div class="quantity-control" data-price="89000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Sò Điệp Nướng Phô Mai - 75k</span>
+          <div class="quantity-control" data-price="75000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cá Tầm Nấu Măng Chua - 100k</span>
+          <div class="quantity-control" data-price="100000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cá Tầm Nướng Muối Ớt - 60k</span>
+          <div class="quantity-control" data-price="60000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cá Tai Tượng Chiên Xù - 60k</span>
+          <div class="quantity-control" data-price="60000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cá Lóc Hấp Bầu - 90k</span>
+          <div class="quantity-control" data-price="90000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cá Điêu Hồng Nướng Giấy Bạc - 80k</span>
+          <div class="quantity-control" data-price="80000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Cá Bò Da Chiên Nước Mắm - 90k</span>
+          <div class="quantity-control" data-price="90000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Trà Sữa - 39k</span>
+          <div class="quantity-control" data-price="39000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Trà Chanh - 29k</span>
+          <div class="quantity-control" data-price="29000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Trà Đào - 35k</span>
+          <div class="quantity-control" data-price="35000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+        
+      <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Đá Me - 25k</span>
+          <div class="quantity-control" data-price="25000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+      </div>
+      
+          <div class="menu-item d-flex justify-content-between align-items-center mb-2">
+          <span>Nước Ép Dứa - 40k</span>
+          <div class="quantity-control" data-price="40000">
+            <button class="btn-minus">-</button>
+            <span class="quantity">0</span>
+            <button class="btn-plus">+</button>
+          </div>
+        </div>
+   </div>
+  </div>
+</div>
+
+<!-- THÔNG TIN ĐẶT MÓN -->
+<div class="mb-3">
+  <input type="tel" class="form-control" placeholder="Số điện thoại" required>
+</div>
+
+<div class="mb-3">
+  <input type="text" class="form-control" placeholder="Họ và tên" required>
+</div>
+
+<div class="mb-3">
+  <textarea class="form-control" rows="3" placeholder="Ghi chú địa chỉ, thời gian giao hàng, v.v."></textarea>
+</div>
+
+<div class="mb-3">
+  <textarea class="form-control" rows="2" placeholder="Ghi chú yêu cầu món ăn (nếu có)"></textarea>
+</div>
+
+<!-- PHƯƠNG THỨC THANH TOÁN -->
+<div class="mb-3">
+  <label for="paymentMethod" class="form-label fw-bold">Phương thức thanh toán:</label>
+  <select class="form-select" id="paymentMethod">
+    <option selected disabled>Chọn phương thức</option>
+    <option value="cash">Tiền mặt</option>
+    <option value="transfer">Chuyển khoản</option>
+  </select>
+</div>
+
+<!-- MÃ QR -->
+<div class="mb-3" id="qrCode" style="display: none; text-align: center;">
+  <label class="form-label fw-bold"></label>
+  <img src="./img/MaQR.jpg" alt="Mã QR" class="img-fluid" style="width: 130px;">
+</div>
+<!-- TỔNG TIỀN -->
+<div class="mb-3 text-center">
+  <label class="form-label fw-bold fs-5">Tổng tiền:</label>
+  <p id="totalPrice" class="fw-semibold text-danger fs-4">0₫</p>
+</div>
+
+<!-- NÚT ĐẶT MÓN -->
+<button type="button" class="btn btn-primary mt-3" onclick="confirmOrder()">Xác Nhận Đặt Món</button>
+
+<!-- THÔNG BÁO CẢM ƠN (ẩn ban đầu) -->
+<p id="thankYouMessage" style="display:none; text-align:center; color: green; font-size: 20px; margin-top: 15px;">
+  Cảm ơn bạn đã đặt hàng!
+</p>
+
+<!-- THÔNG TIN GỌI ĐIỆN -->
+<div class="text-center text-muted mt-3" style="font-size: 0.9rem;">Chúng tôi sẽ gọi điện xác nhận đơn hàng trước khi giao.</div>
+    </header>
+    <main>
+      <section class="section thuc-don-section" id="section_423215411">
+        <div class="bg section-bg fill bg-fill bg-loaded"></div>
+
+        <div class="section-content relative">
+          <div class="row" id="row-1204879168">
+            <div id="col-737545922" class="col small-12 large-12">
+              <div class="col-inner text-center">
+                <div class="container section-title-container">
+                  <h2 class="section-title section-title-center">
+                    <b></b
+                    ><span
+                      class="section-title-main font-effect-shadow-multiple"
+                      style="color: rgb(159, 0, 0)"
+                      >Đặc Sản Tràm Chim</span
+                    ><b></b>
+                  </h2>
+                </div>
+
+                <p>
+                  Khám Phá Tràm Chim - Điểm Đến Hoàn Hảo Cho Cơm Trưa Văn Phòng
+                </p>
+                <section class="container">
+                  <div class="row">
+                    <div class="col lagre-3 col-3">
+                      <div class="row">
+                        <img
+                          class="w-100 rounded"
+                          height="300"
+                          src="./img/ga_ta_hap_mam_nhi.jpg"
+                          alt="ga_ta_hap_mam_nhi"
+                        />
+                      </div>
+                      <div class="row">
+                        <img
+                          class="w-100 rounded"
+                          height="300"
+                          src="./img/gio_heo_chien_muoi.jpg"
+                          alt="gio_heo_muoi_chien_gion"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <img
+                        class="w-100 rounded"
+                        height="600"
+                        src="./img/bg_header.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-3">
+                      <div class="row">
+                        <img
+                          class="w-100 rounded"
+                          height="300"
+                          src="./img/tom_sot_thai.jpg"
+                          alt="tom_sot_thai"
+                        />
+                      </div>
+                      <div class="row">
+                        <img
+                          class="w-100 rounded"
+                          height="300"
+                          src="./img/muc-trung-hap-hanh.jpg"
+                          alt="Muc_trung_hap_hanh"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Giới thiệu -->
+      <div class="container py-5" id="introduce">
+        <h2 class="header-2">GIỚI THIỆU</h2>
+  
+        <div
+          class="tab-content p-4 border border-top-0 rounded-bottom bg-dark"
+          id="restaurantTabContent"
+        >
+          <div class="tab-pane fade show active" id="about" role="tabpanel">
+            <h3>Giới thiệu Nhà hàng</h3>
+            <div class="paragraph-1 d-flex m-5">
+              <p style="text-indent: 30px">
+                Chào mừng bạn đến với
+                <strong
+                  >TRÀM CHIM SÂN VƯỜN - HƯƠNG VỊ ĐẬM ĐÀ, KHÔNG GIAN CHUẨN
+                  CHILL</strong
+                >
+                nơi ẩm thực giao hòa cùng không gian tinh tế. Chúng tôi tự hào
+                mang đến những món ăn chất lượng cao, phục vụ trong không gian ấm
+                cúng, hiện đại và thân thiện. <br />
+                Tọa lạc tại 24-26 Nguyễn Trung Trực, thị trấn Bến Lức, Long An,
+                Tràm Chim Sân Vườn là điểm đến lý tưởng để tận hưởng ẩm thực đặc
+                sắc trong không gian rộng rãi, thoải mái. Nhà hàng được thiết kế
+                hài hòa với khu sân vườn xanh mát, thoáng đãng, mang đến cảm giác
+                thư giãn, gần gũi thiên nhiên, cùng khu nhà hàng sang trọng, ấm
+                cúng, phù hợp cho những buổi tiệc gia đình, tiếp khách hay hội
+                họp. Dù là một bữa ăn đời thường hay một sự kiện quan trọng, Tràm
+                Chim luôn sẵn sàng phục vụ. Thực đơn phong phú với những món ăn
+                hấp dẫn: gà tre tiềm ớt hiểm, dê nướng ngũ vị, bò tơ hấp, cá lóc
+                nướng trui, hải sản tươi sống, cùng các món lẩu và đồ nhậu chuẩn
+                vị. Tất cả đều được chế biến từ nguyên liệu tươi ngon, đảm bảo
+                chất lượng và hương vị khó quên. Bên cạnh đó, Tràm Chim Sân Vườn
+                còn nhận tổ chức tiệc cưới, sinh nhật, liên hoan, hội nghị, sự
+                kiện, với không gian rộng rãi, trang trí theo yêu cầu và dịch vụ
+                chuyên nghiệp.
+              </p>
+              <img class="w-50 h-50" src="./img/intro.jpg" alt="" />
+            </div>
+            <div class="paragraph-2 d-flex">
+              <img class="w-50 h-50" src="./img/intro_2.jpg" alt="" />
+              <p style="text-indent: 30px">
+                Với đội ngũ đầu bếp chuyên nghiệp và nguyên liệu tươi ngon mỗi
+                ngày, nhà hàng của chúng tôi sẽ mang đến trải nghiệm ẩm thực khó
+                quên cho bạn và người thân.
+              </p>
+            </div>
+          </div>
+  
+          <div class="tab-pane fade" id="menu" role="tabpanel">
+            <h3>Thực đơn</h3>
+            <p>
+              Danh sách món ăn sẽ được hiển thị ở đây hoặc nhúng từ phần HTML menu
+              bạn đã tạo trước đó.
+            </p>
+          </div>
+  
+          <div class="tab-pane fade" id="booking" role="tabpanel">
+            <h3>Đặt bàn</h3>
+            <p>Form đặt bàn trực tuyến có thể được tích hợp tại đây.</p>
+          </div>
+  
+          <div class="tab-pane fade" id="contact" role="tabpanel">
+            <h3>Liên hệ</h3>
+            <p>📞 Số điện thoại: 123-456-7890</p>
+            <p>📍 Địa chỉ: 123 Anywhere St., Any City</p>
+          </div>
+        </div>
+      </div>
+      <section class="container py-5" id="tin-tuc-su-kien">
+        <h2 class="header-2">TIN TỨC - ƯU ĐÃI</h2>
+        <div class="row g-4">
+      
+          <!-- Tin 1: Gà hấp -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow position-relative">
+              <img src="./img/ga_ta_menu.jpg" class="card-img-top" alt="Ưu đãi Gà hấp">
+              <div class="card-body">
+                <h5 class="card-title">🎉 Gà hấp mắm nhĩ - Giảm 15%</h5>
+                <p class="card-text">
+                  Giá cũ: <del>380.000₫</del><br>
+                  Giá mới: <span class="text-success fw-bold">323.000₫</span>
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Tin 2: Cơm chiên -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow position-relative">
+              <img src="./img/Comchien.jpg" class="card-img-top" alt="Cơm chiên ưu đãi">
+              <div class="card-body">
+                <h5 class="card-title">🔥 Cơm chiên hải sản - Giảm 20%</h5>
+                <p class="card-text">
+                  Giá cũ: <del>89.000₫</del><br>
+                  Giá mới: <span class="text-success fw-bold">71.000₫</span>
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Tin 3: Combo gia đình -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow position-relative">
+              <img src="./img/Combo.jpg" class="card-img-top" alt="Combo gia đình">
+              <div class="card-body">
+                <h5 class="card-title">💥 Combo Gia Đình 1 - Giảm 10%</h5>
+                <p class="card-text">
+                  Giá cũ: <del>799.000₫</del><br>
+                  Giá mới: <span class="text-success fw-bold">719.000₫</span>
+                </p>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </section>      
+      <!-- Menu -->
+
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="menu-container" id="menu">
+              <header>
+                <h2 class="header-2">Thực đơn</h2>
+              </header>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title main">ĐẶC SẢN TRÀM CHIM</h2>
+                  <ul>
+                    <li><span>Gà hấp mắm nhĩ</span><span>290k-380k</span></li>
+                    <li><span>Gà tiềm ớt hiểm</span><span>299k-399k</span></li>
+                    <li><span>Giò heo muối chiên giòn</span><span>219k</span></li>
+                    <li><span>Lẩu nấm Tràm Chim</span><span>310k</span></li>
+                    <li><span>Sườn nướng Tràm Chim</span><span>149k/cây</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/ga_ta_menu.jpg" alt="Main Course Image" />
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-image img-left">
+                  <img src="./img/dau-hu-xot-tu-xuyen.jpg" alt="Appetizer Image" />
+                </div>
+                <div class="menu-block">
+                  <h2 class="section-title appetizer">KHAI VỊ</h2>
+                  <ul>
+                    <li><span>Đậu hũ Tràm Chim</span><span>159k</span></li>
+                    <li><span>Đậu hũ tứ xuyên</span><span>159k</span></li>
+                    <li><span>Chả Giò Hải Sản</span><span>139.000₫</span></li>
+                    <li><span>Khoai môn chiên nước mắm</span><span>89k</span></li>
+                    <li><span>Khô cá kèo mắm me</span><span>149k</span></li>
+                    <li><span>Rau củ kho quẹt</span><span>49k</span></li>
+                  </ul>
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title beverage">CƠM CHIÊN</h2>
+                  <ul>
+                    <li><span>Cơm Chiên Tràm Chim</span><span>139.000₫</span></li>
+                    <li><span>Cơm Chiên Cá Mặn</span><span>119.000₫</span></li>
+                    <li><span>Cơm Chiên Hải Sản</span><span>89.000₫</span></li>
+                    <li><span>Cơm Chiên Thịt Cua</span><span>119.000₫</span></li>
+                    <li><span>Cơm vắt khô dứa</span><span>159.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/Comchien.jpg" alt="Cơm Chiên" />
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="menu-container" id="menu">
+              <header>
+                <h2 class="header-2">Thực đơn</h2>
+              </header>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title main">CÁC MÓN SÚP</h2>
+                  <ul>
+                    <li><span>Súp Tràm Chim Đặc Biệt</span><span>49.000₫</span></li>
+                    <li><span>Súp Hải Sản / Gà Xé / Tôm</span><span>39.000₫</span></li>
+                    <li><span>Súp Thố</span><span>199.000₫</span></li>
+                    <li><span>Súp Cua Trứng Gà</span><span>89.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/Suop.jpg" alt="Súp" />
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-image img-left">
+                  <img src="./img/raucu.jpg" alt="Rau Củ" />
+                </div>
+                <div class="menu-block">
+                  <h2 class="section-title appetizer">RAU CỦ</h2>
+                  <ul>
+                    <li><span>Rau Cải Xào Thập Cẩm</span><span>99.000₫</span></li>
+                    <li><span>Bông Thiên Lý Xào Bò</span><span>139.000₫</span></li>
+                    <li><span>Rau Muống Xào Tỏi</span><span>79.000₫</span></li>
+                    <li><span>Cà Tím Nướng Mỡ Hành</span><span>89.000₫</span></li>
+                    <li><span>Bầu Luộc</span><span>79.000₫</span></li>
+                  </ul>
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title beverage">MÌ - BÚN - XÀO</h2>
+                  <ul>
+                    <li><span>Bún Gạo Xào Hải Sản</span><span>119.000₫</span></li>
+                    <li><span>Miến Xào Hải Sản</span><span>119.000₫</span></li>
+                    <li><span>Mì Trứng Xào Singapore</span><span>119.000₫</span></li>
+                    <li><span>Nui Xào Bò</span><span>119.000₫</span></li>
+                    <li><span>Mì Xào Giòn</span><span>119.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/Mixao.jpg" alt="Mì Xào" />
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="menu-container" id="menu">
+              <header>
+                <h2 class="header-2">Thực đơn</h2>
+              </header>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title main">CHÁO</h2>
+                  <ul>
+                    <li><span>Cháo Bò Bằm</span><span>150.000₫</span></li>
+                    <li><span>Cháo Hải Sản</span><span>169.000₫</span></li>
+                    <li><span>Cháo Gà Lá Giang</span><span>169.000₫</span></li>
+                    <li><span>Cháo Ếch Singapore</span><span>209.000₫</span></li>
+                    <li><span>Cháo Thịt Bằm Trứng Bắc Thảo</span><span>200.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/chao.jpg" alt="Cháo" />
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-image img-left">
+                  <img src="./img/dau-hu-xot-tu-xuyen.jpg" alt="DÊ" />
+                </div>
+                <div class="menu-block">
+                  <h2 class="section-title appetizer">CÁC MÓN DÊ</h2>
+                  <ul>
+                    <li><span>Dê Nướng Ngũ Vị</span><span>179.000₫</span></li>
+                    <li><span>Dê Xào Sả Ớt</span><span>179.000₫</span></li>
+                    <li><span>Dê Né</span><span>219.000₫</span></li>
+                    <li><span>Lẩu Dê Tràm Chim</span><span>300.000₫</span></li>
+                  </ul>
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title beverage">GÀ TA – GÀ TRE</h2>
+                  <ul>
+                    <li><span>Gà Tre Rang Lá Chanh</span><span>259.000₫</span></li>
+                    <li><span>Gà Tre Nướng Muối Ớt</span><span>289.000₫</span></li>
+                    <li><span>Gà Ta Quay Tràm Chim</span><span>300.000₫</span></li>
+                    <li><span>Lẩu Gà Lá Giang</span><span>350.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/ga.jpg" alt="GÀ" />
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="menu-container" id="menu">
+              <header>
+                <h2 class="header-2">Thực đơn</h2>
+              </header>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title main">BỒ CÂU</h2>
+                  <ul>
+                    <li><span>Bồ Câu Quay</span><span>150.000₫</span></li>
+                    <li><span>Bồ Câu Nướng Muối Ớt</span><span>150.000₫</span></li>
+                    <li><span>Bồ Câu Tiềm Thuốc Bắc</span><span>239.000₫</span></li>
+                    <li><span>Cháo Bồ Câu Hạt Sen</span><span>139.000₫</span></li>
+                    <li><span>Bồ Câu Rôti</span><span>189.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/Bocau.jpg" alt="Bồ Câu" />
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-image img-left">
+                  <img src="./img/Combo.jpg" alt="Combo Gia Đình" />
+                </div>
+                <div class="menu-block">
+                  <h2 class="section-title appetizer">COMBO GIA ĐÌNH</h2>
+                  <ul>
+                    <li><span>Combo Gia Đình 1: Gà Hấp + Gỏi Ngó Sen + Lẩu Thái + Dê Nướng Ngũ Vị + Mì Xào Giòn + Cơm vắt khô dứa + Nui Xào Bò + Sườn Nướng Muối Ớt</span><span>750.000₫</span></li>
+                    <li><span>Combo Gia Đình 2: Cá Lóc Nướng Trui + Rau Sống + Bún + Nước Chấm + Bồ Câu Quay + Dê Xào Sả Ớt + Mì Trứng Xào Singapore</span><span>689.000₫</span></li>
+                    <li><span>Combo Gia Đình 3: Giò Heo Muối Chiên + Canh Gà Lá Giang + Cơm Trắng + Dê Xào Sả Ớt + Sườn Xào Chua Ngọt</span><span>529.000₫</span></li>
+                    <li><span>Combo Gia Đình 4: Sườn Nướng + Lẩu Mắm Miền Tây + Tráng Miệng + Khai Vị</span><span>649.000₫</span></li>
+                    <li><span>Combo Gia Đình 5: Vịt Quay + Gỏi Xoài + Cơm Chiên Hải Sản + Cháo Gà Lá Giang</span><span>650.000₫</span></li>
+                    <li><span>Combo Gia Đình 6: Lẩu Cá Lăng + Sườn Nướng + Gà Ta Quay Tràm Chim</span><span>450.000₫</span></li>
+                  </ul>
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title beverage">SƯỜN HEO</h2>
+                  <ul>
+                    <li><span>Sườn Nướng Mật Ong</span><span>139.000₫</span></li>
+                    <li><span>Sườn Nướng Tứ Xuyên</span><span>139.000₫</span></li>
+                    <li><span>Sườn Nướng Muối Ớt</span><span>139.000₫</span></li>
+                    <li><span>Sườn Sốt Rựu Vang</span><span>139.000₫</span></li>
+                    <li><span>Sườn Xào Chua Ngọt</span><span>139.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/Suon.jpg" alt="Sườn" />
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="menu-container" id="menu">
+              <header>
+                <h2 class="header-2">Thực đơn</h2>
+              </header>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title main">SÒ</h2>
+                  <ul>
+                    <li><span>Sò Dương Hấp Chàm Chim</span><span>100.000₫</span></li>
+                    <li><span>Sò Dương Nướng Muối Ớt</span><span>60.000₫</span></li>
+                    <li><span>Sò Dương Nướng Mỡ Hành</span><span>60.000₫</span></li>
+                    <li><span>Sò Lông Nướng Mọi</span><span>60.000₫</span></li>
+                    <li><span>Sò Lông Hấp Xã</span><span>70.000₫</span></li>
+                    <li><span>Sò Điệp Nướng Phô Mai</span><span>75.000₫</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/So.jpg" alt="SÒ" />
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-image img-left">
+                  <img src="./img/Ca.jpg" alt="CÁC MÓN CÁ" />
+                </div>
+                <div class="menu-block">
+                  <h2 class="section-title appetizer">CÁC MÓN CÁ</h2>
+                  <ul>
+                    <li><span>Cá Tầm Nấu Măng Chua/span><span>100.000₫</span></li>
+                    <li><span>Cá Tầm Nướng Muối Ớt</span><span>60.000₫</span></li>
+                    <li><span>Cá Tai Tượng Chiên Xù</span><span>60.000₫</span></li>
+                    <li><span>Cá Lóc Hấp Bầu</span><span>90.000₫</span></li>
+                    <li><span>Cá Điêu Hồng Nướng Giấy Bạc</span><span>80.000₫</span></li>
+                    <li><span>Cá Bò Da Chiên Nước Mắm</span><span>90.000₫</span></li>
+                  </ul>
+                </div>
+              </section>
+        
+              <section class="menu-section">
+                <div class="menu-block">
+                  <h2 class="section-title beverage">ĐỒ UỐNG</h2>
+                  <ul>
+                    <li><span>Trà Sữa</span><span>39.000₫</span></li>
+                    <li><span>Trà Chanh</span><span>29.000₫</span></li>
+                    <li><span>Trà Đào</span><span>35.000₫</span></li>
+                    <li><span>Đá Me</span><span>25.000₫</span></li>
+                    <li><span>Nước Ép Dứa</span><span>40.000₫</span>
+                    <li><span>Nước ngọt</span><span>15k-20k</span></li>
+                    <li><span>Bia các loại</span><span>19k-25k</span></li>
+                    <li><span>Khăn Lạnh</span><span>5k</span></li>
+                  </ul>
+                </div>
+                <div class="menu-image img-right">
+                  <img src="./img/nuoc-uong-giai-khat.jpg" alt="Đồ uống" />
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- Tại sao chọn -->
+      <section id="instructors" class="p-5 m-5">
+        <div class="container">
+          <h2 class="text-center">
+            <img class="w-25 rounded" src="./img/logo.jpg" alt="logo">
+          </h2>
+          <p class="lead text-center mb-5 text-dark">
+            <strong>Tại sao nên chọn nhà hàng Tràm Chim - Bến Lức</strong>
+          </p>
+          <div class="row g-4">
+        
+            <div class="col-md-6 col-lg-2">
+              <div class="card bf-light">
+                <div class="card-body text-center">
+                  <i class="bi bi-cart-check"></i>
+                  <p class="card-text">Sản phẩm luôn được lựa chọn kỹ càng.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-2">
+              <div class="card bf-light">
+                <div class="card-body text-center">
+                  <i class="bi bi-bag-check"></i>
+                  <p class="card-text">Hỗ trợ đặt và giao hàng nhanh chóng.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-2">
+              <div class="card bf-light">
+                <div class="card-body text-center">
+                  <i class="bi bi-wifi"></i>
+                  <p class="card-text">Wifi miễn phí cho khách hàng.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-2">
+              <div class="card bf-light">
+                <div class="card-body text-center">
+                  <i class="bi bi-p-square"></i>
+                  <p class="card-text">Chỗ đậu xe miễn phí cho thực khách dùng tại nơi.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-2">
+              <div class="card bf-light">
+                <div class="card-body text-center">
+                  <i class="bi bi-people"></i>
+                  <p class="card-text">Có đa dạng phòng cho thực khách.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-2">
+              <div class="card bf-light">
+                <div class="card-body text-center">
+                  <i class="bi bi-house-add"></i>
+                  <p class="card-text">Và nhiều tiện ích tích hợp khác.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+
+       <section class="p-5">
+        <div class="container">
+          <div class="row g-4">
+            <h2 class="text-center mb-4">Thông tin liên hệ</h2>
+            <div class="col-md">
+              <ul class="list-group list-group-flush lead">
+                <li class="list-group-item">
+                  <span class="fw-bold">💒 Địa chỉ chính</span><br> 24-26 Nguyễn Trung Trực, TT.Bến Lức, Tỉnh Long An
+                </li>
+                <li class="list-group-item">
+                  <span class="fw-bold">☎ Số điện thoại</span><br>
+                  <span class="d-inline">
+                    0941 61 8833
+                    <a href="https://www.facebook.com/share/1HrYpJCrTx/?mibextid=wwXIfr" target="_blank" class="ms-2 text-decoration-none">
+                      <i class="bi bi-facebook fs-3"></i>
+                    </a>
+                    <a href="https://github.com/yourprofile" target="_blank" class="ms-2 text-decoration-none">
+                      <i class="bi bi-github fs-3"></i>
+                    </a>
+                  </span>
+                </li>                              
+              </ul>
+            </div>
+            <div class="col-md">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+       </section>
+<!-- SCRIPT TÍNH TỔNG TIỀN -->
+<script>
+  function updateTotal() {
+    let total = 0;
+    document.querySelectorAll('.quantity-control').forEach(item => {
+      const price = parseInt(item.getAttribute('data-price')) || 0;
+      const quantity = parseInt(item.querySelector('.quantity').textContent) || 0;
+      total += price * quantity;
+    });
+
+    document.getElementById('totalPrice').textContent = total.toLocaleString('vi-VN') + '₫';
+  }
+
+  document.querySelectorAll('.btn-plus').forEach(button => {
+    button.addEventListener('click', function () {
+      const quantitySpan = this.previousElementSibling;
+      quantitySpan.textContent = parseInt(quantitySpan.textContent) + 1;
+      updateTotal();
+    });
+  });
+
+  document.querySelectorAll('.btn-minus').forEach(button => {
+    button.addEventListener('click', function () {
+      const quantitySpan = this.nextElementSibling;
+      let current = parseInt(quantitySpan.textContent);
+      if (current > 0) {
+        quantitySpan.textContent = current - 1;
+        updateTotal();
+      }
+    });
+  });
+
+  // Ẩn/hiện QR theo phương thức thanh toán
+  document.getElementById('paymentMethod').addEventListener('change', function () {
+    const qr = document.getElementById('qrCode');
+    if (this.value === 'transfer') {
+      qr.style.display = 'block';
+    } else {
+      qr.style.display = 'none';
+    }
+  });
+</script>
+<script>
+  function confirmOrder() {
+    // Thực hiện các thao tác xử lý đơn hàng ở đây nếu có
+
+    // Hiển thị thông báo cảm ơn
+    document.getElementById("thankYouMessage").style.display = "block";
+
+    // (Tuỳ chọn) Cuộn xuống phần cảm ơn
+    document.getElementById("thankYouMessage").scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/link_ggs.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js'></script>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiY2FiYXhhIiwiYSI6ImNtN2h1eXMyYzBhMWIyanBxcTRkamtzaXUifQ.54xSfMLhpQjzzzTrYme-1w';
+    var map = new mapboxgl.Map({
+	    container: 'map', // container ID
+	    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+	    center: [106.4982482,10.6321638], // starting position [lng, lat]
+	    zoom: 16, // starting zoom
+    });
+    </script>
+  </body>
+</html>
+ 
